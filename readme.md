@@ -1,0 +1,2 @@
+#Installation on Ubuntu
+To install this on ubuntu you will also need to follow this article to install other dependency that is needed on VPS/Server maybe: https://docs.browserless.io/blog/2018/04/25/chrome-linux.html

@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
     console.log(uri);
     try {
       
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({ headless: false});
 
       const page =  await browser.newPage();
 
@@ -33,11 +33,12 @@ router.get('/', async function(req, res, next) {
 
       browser.close();
 
-      console.log(dom.window.document.querySelector(".gLFyf.gsfi").title, "dataResponse")
+      console.log(dom.window.document.querySelector("title").innerHTML, "dataResponse")
 
       res.json({
         status: 'success',
         message: 'Operation has been successfully completed',
+        response: dom.window.document.querySelector("body").innerHTML
       });
       
     } catch (error) {
